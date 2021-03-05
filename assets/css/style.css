@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 * {
   box-sizing: border-box;
   padding: 0;
@@ -16,6 +15,12 @@ a {
 
 p {
   font-size: 16px;
+}
+
+footer {
+  padding: 0;
+  margin: 0;
+  text-align: center;
 }
 
 .header {
@@ -70,10 +75,4 @@ p {
   justify-content: space-between;
   width: 100%;
   padding: 0 15px;
-}
-
-footer {
-    padding: 0;
-    margin: 0;
-    text-align: center;
 }
