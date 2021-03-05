@@ -17,7 +17,7 @@
 
 **Authors:
 
-Daniel Lewis
+Daniel Lewis :)
 Cory Alport :)
 Nick Rodriquez :)
 Nathan Hogan :)
