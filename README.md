@@ -18,7 +18,7 @@
 **Authors:
 
 Daniel Lewis
-Cory Alport
+Cory Alport :)
 Nick Rodriquez :)
 Nathan Hogan :)
 
