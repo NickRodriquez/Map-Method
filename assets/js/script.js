@@ -1,6 +1,8 @@
+var searchFormEl = document.getElementById('search-form');
+var searchInputEl = document.getElementById('search');
 
 
-
+// MapBox API fetch
 function getMapTilewithEnglishLabels() {
     fetch("https://maptiles.p.rapidapi.com/en/map/v1/3/6/3.png", {
 	"method": "GET",
@@ -17,3 +19,25 @@ function getMapTilewithEnglishLabels() {
 });
 }
 getMapTilewithEnglishLabels();
+
+// get search term from formSubmitHandler and return results
+function getSearch() {
+
+}
+
+// handles the search form submission
+function formSubmitHandler(event) {
+    event.preventDefault();
+    // get value from input element
+    var search = searchInputEl.value.trim();
+    if (search) {
+		// send search to getSearch for API processing
+        getSearch(search);
+        searchInputEl.value = "";
+    } else {
+        alert("Please enter a search");
+    }
+    console.log(event);
+};
+
+searchFormEl.addEventListener('submit', formSubmitHandler);
