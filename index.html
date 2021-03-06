@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>wandermapp</title>
 </head>
@@ -14,19 +15,21 @@
         <h1><a href="#">wandermapp</a></h1>
     </header>
 
-    <main id="container" class="container border">
-        <div id="sidebar" class="sidebar border">
+    <main id="container" class="container">
+        <div id="sidebar" class="sidebar">
             <div class="card">
                 <form id="search-form" class="card-body">
                     <input type="text" name="search" id="search" autofocus="false" class="form-input" placeholder="Search"/>
-                    <button type="submit" class="btn">Search</button>
+                    <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
             </div>
         </div>
-        <div id="map-box" class="map-box border">map-box</div>
+        <div id="map-box" class="map-box">
+            <map name="wandermapp" id="wandermapp">map-goes-here</map>
+        </div>
     </main>
 
-    <footer id="footer" class="footer border">
+    <footer id="footer" class="footer">
         <div>
             <p>Created By Group 1: Nick, Danny, Nate & Cory</p>
         </div>

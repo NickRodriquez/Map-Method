@@ -23,14 +23,6 @@ p {
   font-size: 16px;
 }
 
-.btn {
-  text-decoration: none;
-  padding: 6px 5px;
-  width: 100%;
-  display: block;
-  margin: 5px 0;
-}
-
 .hero {
   background-color: var(--primary-color);
   text-align: center;
@@ -44,23 +36,22 @@ p {
   font-size: 48px;
 }
 
-.border {
-  border: 2.5px;
-  border-style: inset;
-}
-
 .sidebar {
-  width: 20%;
+  border: 3px solid black; /* used for visual aid, delete when unneeded */
+  width: 25%;
+  padding: 0 auto;
 }
 
 .map-box {
-  width: 80%;
+  border: 3px solid black; /* used for visual aid, delete when unneeded */
+  width: 75%;
+  padding: 0 auto;
 }
 
 .container {
   display: flex;
   width: 100%;
-  padding: 12px 4px;
+  padding: 5px 4px;
   height: 512px;
 }
 
@@ -81,15 +72,11 @@ p {
 
 .card {
   margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
-  border-radius: var(--border-radius);
 }
 
 .card-header {
   color: var(--primary);
-  background-color: var(--dark);
   padding: 2.5%;
-  border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
 }
 
 .card-body {
