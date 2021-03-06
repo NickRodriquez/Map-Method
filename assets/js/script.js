@@ -1,6 +1,6 @@
 var searchFormEl = document.getElementById('search-form');
 var searchInputEl = document.getElementById('search');
-var mapEl = document.getElementById('wandermapp');
+var mapContainerEl = document.getElementById('map-container');
 
 
 // MapBox API fetch
@@ -14,6 +14,7 @@ function getMapTilewithEnglishLabels() {
 	})
 		.then(response => {
 			if (response.ok) {
+				console.log(response);
 				console.log(response.url);
 			}
 		})

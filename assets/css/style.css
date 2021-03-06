@@ -43,7 +43,7 @@ p {
   padding: 0 auto;
 }
 
-.map-box {
+.map-container {
   border: 3px solid black; /* used for visual aid, delete when unneeded */
   width: 75%;
   padding: 0 auto;
