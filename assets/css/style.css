@@ -12,6 +12,8 @@
 
 body {
   background-color: var(--tertiary-color);
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 a {
@@ -27,7 +29,6 @@ p {
   background-color: var(--primary-color);
   text-align: center;
   padding: 12px 4px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: flex;
 }
 
@@ -57,14 +58,15 @@ p {
 
 .footer {
   background-color: var(--primary-color);
+  width: 100%;
   text-align: center;
   padding: 12px 4px;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   display: flex;
+  position: fixed;
+  bottom: 0;
 }
 
 .footer p {
-  display: inline-block;
   color: var(--secondary-color);
 }
 

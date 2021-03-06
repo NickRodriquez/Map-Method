@@ -1,4 +1,6 @@
 
+
+
 function getMapTilewithEnglishLabels() {
     fetch("https://maptiles.p.rapidapi.com/en/map/v1/3/6/3.png", {
 	"method": "GET",
