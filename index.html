@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,20 +8,31 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>wandermapp</title>
 </head>
-<body>
-    <header id="header" class="header border">
+
+<body class="min-100-vh">
+    <header class="hero">
         <h1><a href="#">wandermapp</a></h1>
     </header>
+
     <main id="container" class="container border">
-        <div id="sidebar" class="sidebar border">sidebar</div>
+        <div id="sidebar" class="sidebar border">
+            <div class="card">
+                <form id="search-form" class="card-body">
+                    <input type="text" name="search" id="search" autofocus="false" class="form-input" placeholder="Search"/>
+                    <button type="submit" class="btn">Search</button>
+                </form>
+            </div>
+        </div>
         <div id="map-box" class="map-box border">map-box</div>
     </main>
-    <script src="./assets/js/script.js"></script>
+
     <footer id="footer" class="footer border">
         <div>
-            <h4>Created By Group 1: Nick, Danny, Nate & Cory</h4>
+            <p>Created By Group 1: Nick, Danny, Nate & Cory</p>
         </div>
     </footer>
-  
+
+    <script src="./assets/js/script.js"></script>
 </body>
+
 </html>

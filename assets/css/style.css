@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #2a607c;
+  --secondary-color: aliceblue;
+  --tertiary-color: #d9dcd6;
+}
+
 * {
   box-sizing: border-box;
   padding: 0 auto;
@@ -5,11 +11,11 @@
 }
 
 body {
-  background-color: #d9dcd6;
+  background-color: var(--tertiary-color);
 }
 
 a {
-  color: #ffffff;
+  color: var(--secondary-color);
   text-decoration: none;
 }
 
@@ -17,16 +23,23 @@ p {
   font-size: 16px;
 }
 
-.header {
+.btn {
+  text-decoration: none;
+  padding: 6px 5px;
+  width: 100%;
+  display: block;
+  margin: 5px 0;
+}
+
+.hero {
+  background-color: var(--primary-color);
   text-align: center;
   padding: 12px 4px;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-  background-color: #2a607c;
   display: flex;
-  position: sticky;
 }
 
-.header h1 {
+.hero h1 {
   display: inline-block;
   font-size: 48px;
 }
@@ -46,14 +59,68 @@ p {
 
 .container {
   display: flex;
-  height: 512px;
   width: 100%;
   padding: 12px 4px;
+  height: 512px;
 }
 
 .footer {
-  padding: 12px 4px;
+  background-color: var(--primary-color);
   text-align: center;
-  width: 100%;
-  height: 128px;
+  padding: 12px 4px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  display: flex;
+}
+
+.footer p {
+  display: inline-block;
+  color: var(--secondary-color);
+}
+
+/* CARDS */
+
+.card {
+  margin: 0 0 20px 0;
+  border: 3px solid var(--dark);
+  border-radius: var(--border-radius);
+}
+
+.card-header {
+  color: var(--primary);
+  background-color: var(--dark);
+  padding: 2.5%;
+  border-radius: calc(.18rem - 1px) calc(.18rem - 1px) 0 0;
+}
+
+.card-body {
+  padding: 2.5%;
+}
+
+/* HEIGHT / WIDTH UTILS */
+
+.min-100-vh {
+  min-height: 100vh;
+}
+
+.min-100-vw {
+  min-width: 100vw;
+}
+
+/* FONT UTILS */
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+/* FLEX CONTENT */
+
+.flex-row {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
 }
