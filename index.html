@@ -19,14 +19,42 @@
         <div id="sidebar" class="sidebar">
             <div class="card">
                 <form id="search-form" class="card-body">
-                    <input type="text" name="search" id="search" autofocus="false" class="form-input" placeholder="Search"/>
+                    <input type="text" name="search" id="search" autofocus="false" class="form-input"
+                        placeholder="Search" />
                     <button type="submit" class="btn"><i class="fa fa-search" aria-hidden="true"></i></button>
                 </form>
             </div>
+            <div>
+                <form class="card-body">
+                    <h4>Filter Options:</h4>
+                    <br>
+                    <br>    
+                    <input type="checkbox" id="restaurants" class="restaurants" />
+                    <label for="restaurants" class="restaurants">Restaurants</label>
+                    <br>
+                    <br>
+                    <br>
+                    <input type="checkbox" id="gas" class="gas" />
+                    <label for="gas" class="gas">Gas Stations</label>
+                    <br>
+                    <br>
+                    <br>
+                    <input type="checkbox" id="parks" class="parks" />
+                    <label for="parks" class="parks">Parks</label>
+                    <br>
+                    <br>
+                    <br>
+                    <input type="checkbox" id="movies" class="movies" />
+                    <label for="movies" class="movies">Movies</label>
+                    <br>
+                    <br>
+                    <br>
+                    <input type="checkbox" id="groceries" class="groceries" />
+                    <label for="groceries" class="groceries">Groceries</label>
+                </form>
+            </div>
         </div>
-        <div id="map-box" class="map-box">
-            <map name="wandermapp" id="wandermapp">map-goes-here</map>
-        </div>
+        <div id="map-container" class="map-container"></div>
     </main>
 
     <footer id="footer" class="footer">
