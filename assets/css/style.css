@@ -85,6 +85,21 @@ p {
   padding: 2.5%;
 }
 
+.restaurants:hover{
+  color: var(--primary-color);
+}
+.gas:hover{
+  color: var(--primary-color);
+}
+.parks:hover{
+  color: var(--primary-color);
+}
+.movies:hover{
+  color: var(--primary-color);
+}
+.groceries:hover{
+  color: var(--primary-color);
+}
 /* HEIGHT / WIDTH UTILS */
 
 .min-100-vh {
