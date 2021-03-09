@@ -60,4 +60,14 @@ function formSubmitHandler(event) {
 	console.log(event);
 };
 
+
+var restEl = document.getElementById("restaurants");
+var gasEl = document.getElementById("gas");
+var parksEl = document.getElementById("parks");
+var moviesEl = document.getElementById("movies");
+var grocEl = document.getElementById("groceries");
+
+var options = [];
+
+
 searchFormEl.addEventListener('submit', formSubmitHandler);
