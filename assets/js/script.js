@@ -2,27 +2,43 @@ var searchFormEl = document.getElementById('search-form');
 var searchInputEl = document.getElementById('search');
 var mapContainerEl = document.getElementById('map-container');
 
+var map, infoWindow;
 
-// MapBox API fetch
-function getMapTilewithEnglishLabels() {
-	fetch("https://maptiles.p.rapidapi.com/en/map/v1/3/6/3.png", {
-		"method": "GET",
-		"headers": {
-			"x-rapidapi-key": "7c01279655mshcff925bf0df6403p19e7acjsn30d9329ba847",
-			"x-rapidapi-host": "maptiles.p.rapidapi.com"
-		}
-	})
-		.then(response => {
-			if (response.ok) {
-				console.log(response);
-				console.log(response.url);
-			}
+function initMap () {
+	let options = {
+		center: {lat: 43.654, lng: -79.383 },
+		zoom: 8
+	};
+	
+
+	map = new google.maps.Map(document.getElementById("map"), options);
+
+	infoWindow = new google.maps.InfoWindow;
+
+	// set up for user location and if users geolocation is turned off or not able. 
+	if (navigator.geolocation) {
+		navigator.geolocation.getCurrentPosition(function(p) {
+			var position = {
+				lat: p.coords.latitude,
+				lng: p.coords.longitude
+			};
+			infoWindow.setPosition(position);
+			infoWindow.setContent("Your Location!");
+			infoWindow.open(map);
+		}, function() {
+			handleLocationError("Geolocation service faild", map.center());
 		})
-		.catch(err => {
-			console.error(err);
-		});
+	} else {
+		handleLocationError("No geolocation available",map.center());
+	}
 }
-getMapTilewithEnglishLabels();
+
+function handleLocationError (content, position) {
+	infoWindow.setPosition(position);
+	infoWindow.setContent(content);
+	infoWindow.open(map);
+}
+
 
 // get search term from formSubmitHandler and return results
 function getSearch() {
