@@ -4,12 +4,12 @@ var mapContainerEl = document.getElementById('map-container');
 
 var map, infoWindow;
 
-function initMap () {
+function initMap() {
 	let options = {
-		center: {lat: 43.654, lng: -79.383 },
+		center: { lat: 43.654, lng: -79.383 },
 		zoom: 8
 	};
-	
+
 
 	map = new google.maps.Map(document.getElementById("map"), options);
 
@@ -55,7 +55,7 @@ function initMap () {
 
 	// set up for user location and if users geolocation is turned off or not able. 
 	if (navigator.geolocation) {
-		navigator.geolocation.getCurrentPosition(function(p) {
+		navigator.geolocation.getCurrentPosition(function (p) {
 			var position = {
 				lat: p.coords.latitude,
 				lng: p.coords.longitude
@@ -63,15 +63,15 @@ function initMap () {
 			infoWindow.setPosition(position);
 			infoWindow.setContent("Your Location!");
 			infoWindow.open(map);
-		}, function() {
+		}, function () {
 			handleLocationError("Geolocation service faild", map.center());
 		})
 	} else {
-		handleLocationError("No geolocation available",map.center());
+		handleLocationError("No geolocation available", map.center());
 	}
 }
 
-function handleLocationError (content, position) {
+function handleLocationError(content, position) {
 	infoWindow.setPosition(position);
 	infoWindow.setContent(content);
 	infoWindow.open(map);
