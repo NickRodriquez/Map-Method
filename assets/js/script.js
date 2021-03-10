@@ -61,15 +61,75 @@ function formSubmitHandler(event) {
 };
 
 
-var restEl = document.getElementById("restaurants");
-var gasEl = document.getElementById("gas");
-var parksEl = document.getElementById("parks");
-var moviesEl = document.getElementById("movies");
-var grocEl = document.getElementById("groceries");
+var checked = JSON.parse(localStorage.getItem('restaurants'));
+if (checked == "true") {
+    document.getElementById("restaurants").checked = true;
+}
+function load(){    
+    var checked = JSON.parse(localStorage.getItem('restaurants'));
+    document.getElementById("restaurants").checked = checked;
+}
 
-var options = [];
+function save(){
+    var checkbox = document.getElementById('restaurants');
+    localStorage.setItem('restaurants', checkbox.checked);
+}
 
+var checked = JSON.parse(localStorage.getItem('gas'));
+if (checked == "true") {
+    document.getElementById("gas").checked = true;
+}
+function load(){    
+    var checked = JSON.parse(localStorage.getItem('gas'));
+    document.getElementById("gas").checked = checked;
+}
 
+function save(){
+    var checkbox = document.getElementById('gas');
+    localStorage.setItem('gas', checkbox.checked);
+}
+
+var checked = JSON.parse(localStorage.getItem('parks'));
+if (checked == "true") {
+    document.getElementById("parks").checked = true;
+}
+function load(){    
+    var checked = JSON.parse(localStorage.getItem('parks'));
+    document.getElementById("parks").checked = checked;
+}
+
+function save(){
+    var checkbox = document.getElementById('parks');
+    localStorage.setItem('parks', checkbox.checked);
+}
+
+var checked = JSON.parse(localStorage.getItem('movies'));
+if (checked == "true") {
+    document.getElementById("movies").checked = true;
+}
+function load(){    
+    var checked = JSON.parse(localStorage.getItem('movies'));
+    document.getElementById("movies").checked = checked;
+}
+
+function save(){
+    var checkbox = document.getElementById('movies');
+    localStorage.setItem('movies', checkbox.checked);
+}
+
+var checked = JSON.parse(localStorage.getItem('groceries'));
+if (checked == "true") {
+    document.getElementById("groceries").checked = true;
+}
+function load(){    
+    var checked = JSON.parse(localStorage.getItem('groceries'));
+    document.getElementById("groceries").checked = checked;
+}
+
+function save(){
+    var checkbox = document.getElementById('groceries');
+    localStorage.setItem('groceries', checkbox.checked);
+}
 
 
 searchFormEl.addEventListener('submit', formSubmitHandler);
