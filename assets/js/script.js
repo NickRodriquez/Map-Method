@@ -70,4 +70,6 @@ var grocEl = document.getElementById("groceries");
 var options = [];
 
 
+
+
 searchFormEl.addEventListener('submit', formSubmitHandler);
