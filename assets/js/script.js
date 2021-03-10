@@ -1,5 +1,18 @@
 
+var slider = document.getElementById("myRange")
+var output = document.getElementById("demo")
+output.innerHTML = slider.nodeValue;
 
+slider.oninput = function() {
+	output.innerHTML = this.value
+}
+
+function search() {
+	// Get the users input from the page
+	var searchQuery = document.getElementById('searchbox').value;
+	// Get the item for Local Storage
+	var localStorageItem = localStorage.getItem(searchQuery);
+}
 
 function getMapTilewithEnglishLabels() {
     fetch("https://maptiles.p.rapidapi.com/en/map/v1/3/6/3.png", {
