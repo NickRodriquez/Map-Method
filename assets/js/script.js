@@ -4,40 +4,40 @@ var mapContainerEl = document.getElementById('map-container');
 var slideContainer = document.getElementById('myRange');
 var apiKey = "AIzaSyDEgZkkL71g2hYpAzc-sKf6Ivyt17LFFYY"
 
-const options = ["restaurants", "gas", "parks", "movies", "groceries"];
+// const options = ["restaurants", "gas", "parks", "movies", "groceries"];
 
-for (var i = 0; i < options.length; i++) {
-	var input = document.getElementsByTagName("checkbox" + options[i]);
-	if (input.checked === true);
-	var checked = JSON.parse(localStorage.getItem(options)); 
+// for (var i = 0; i < options.length; i++) {
+// 	var input = document.getElementsByTagName("checkbox" + options[i]);
+// 	if (input.checked === true);
+// 	var checked = JSON.parse(localStorage.getItem(options));
 
-}
+// }
 
-var slideContainer = function(){
-    var slider = $('.battery-slider'),
-    range = $('.slider-range'),
-    value = $('.slider-value');
-    miles = $('.miles');
+// function slideContainer() {
+// 	var slider = $('.battery-slider'),
+// 		range = $('.slider-range'),
+// 		value = $('.slider-value');
+// 	miles = $('.miles');
 
-    slider.each(function(){
-      value.each(function(){
-          var value = $(this).prev().attr('value');
-          $(this).html(value);
-      });
-      range.on('input', function(){
-        if ( this.value == 100 ) {
-            $(miles).append( "<p>Pass</p>" );
-        }
-        else {
-            $(miles).append( "<p>Fail</p>" );
-        }
+// 	slider.each(function () {
+// 		value.each(function () {
+// 			var value = $(this).prev().attr('value');
+// 			$(this).html(value);
+// 		});
+// 		range.on('input', function () {
+// 			if (this.value == 100) {
+// 				$(miles).append("<p>Pass</p>");
+// 			}
+// 			else {
+// 				$(miles).append("<p>Fail</p>");
+// 			}
 
-        $(this).next(value).html(this.value);
-      });
-    });
-};
+// 			$(this).next(value).html(this.value);
+// 		});
+// 	});
+// };
 
-slideContainer(appendChild.myRange);
+// slideContainer.appendChild(myRange);
 
 var map, infoWindow;
 
@@ -52,31 +52,31 @@ function initMap() {
 	var input = document.getElementById("search");
 	var searchBox = new google.maps.places.SearchBox(input);
 
-	map.addListener("bounds_changed", function() {
+	map.addListener("bounds_changed", function () {
 		searchBox.setBounds(map.getBounds());
 	});
 
 	var markers = [];
 
-	searchBox.addListener("places_changed", function() {
+	searchBox.addListener("places_changed", function () {
 		var places = searchBox.getPlaces();
 
 		if (places.length === 0)
-		return;
+			return;
 
-		markers.forEach(function(m) {m.setMap(null); });
+		markers.forEach(function (m) { m.setMap(null); });
 		markers = [];
 
 		var bounds = new google.maps.LatLngBounds();
 
-		places.forEach(function(p) {
+		places.forEach(function (p) {
 			if (!p.geometry)
-			return;
+				return;
 
 			markers.push(new google.maps.Marker({
 				map: map,
 				title: p.name,
-				position:p.geometry.location
+				position: p.geometry.location
 			}));
 
 			if (p.geometry.viewport)
@@ -85,7 +85,7 @@ function initMap() {
 				bounds.extend(p.geometry.location);
 		});
 		map.fitBounds(bounds);
-		});
+	});
 
 	infoWindow = new google.maps.InfoWindow;
 
@@ -116,7 +116,29 @@ function handleLocationError(content, position) {
 
 // get search term from formSubmitHandler and return results
 function getSearch() {
-	apiUrl = ""
+    // format API urls
+	var apiUrl = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=" + apiKey;
+	console.log("apiURL", apiUrl)
+
+	// fetch API weather data
+    fetch(apiUrl)
+        .then(response => {
+            if (response.ok) {
+                response.json()
+                    .then(data => {
+                        displayDisplaySearch(data)
+                    })
+            } else {
+                console.log("error: " + response.statusText)
+            }
+        })
+        .catch(err => {
+            console.log("error: " + err.statusText)
+        })
+}
+
+function displayDisplaySearch(data) {
+	console.log(data)
 }
 
 // handles the search form submission
@@ -131,7 +153,6 @@ function formSubmitHandler(event) {
 	} else {
 		console.log("Please enter a search");
 	}
-	console.log(event);
 };
 
 
