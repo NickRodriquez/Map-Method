@@ -13,32 +13,6 @@ var apiKey = "AIzaSyDEgZkkL71g2hYpAzc-sKf6Ivyt17LFFYY"
 
 // }
 
-// function slideContainer() {
-// 	var slider = $('.battery-slider'),
-// 		range = $('.slider-range'),
-// 		value = $('.slider-value');
-// 	miles = $('.miles');
-
-// 	slider.each(function () {
-// 		value.each(function () {
-// 			var value = $(this).prev().attr('value');
-// 			$(this).html(value);
-// 		});
-// 		range.on('input', function () {
-// 			if (this.value == 100) {
-// 				$(miles).append("<p>Pass</p>");
-// 			}
-// 			else {
-// 				$(miles).append("<p>Fail</p>");
-// 			}
-
-// 			$(this).next(value).html(this.value);
-// 		});
-// 	});
-// };
-
-// slideContainer.appendChild(myRange);
-
 var map, infoWindow;
 
 function initMap() {
@@ -115,12 +89,14 @@ function handleLocationError(content, position) {
 
 
 // get search term from formSubmitHandler and return results
-function getSearch() {
+function getSearch(search) {
+	console.log(search)
+
     // format API urls
-	var apiUrl = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=Museum%20of%20Contemporary%20Art%20Australia&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=" + apiKey;
+	var apiUrl = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" + search + "&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=" + apiKey;
 	console.log("apiURL", apiUrl)
 
-	// fetch API weather data
+	// fetch API search data
     fetch(apiUrl)
         .then(response => {
             if (response.ok) {
