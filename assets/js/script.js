@@ -2,7 +2,16 @@ var searchFormEl = document.getElementById('search-form');
 var searchInputEl = document.getElementById('search');
 var mapContainerEl = document.getElementById('map-container');
 var slideContainer = document.getElementById('myRange');
+var apiKey = "AIzaSyDEgZkkL71g2hYpAzc-sKf6Ivyt17LFFYY"
 
+const options = ["restaurants", "gas", "parks", "movies", "groceries"];
+
+for (var i = 0; i < options.length; i++) {
+	var input = document.getElementsByTagName("checkbox" + options[i]);
+	if (input.checked === true);
+	var checked = JSON.parse(localStorage.getItem(options)); 
+
+}
 
 var slideContainer = function(){
     var slider = $('.battery-slider'),
@@ -107,7 +116,7 @@ function handleLocationError(content, position) {
 
 // get search term from formSubmitHandler and return results
 function getSearch() {
-
+	apiUrl = ""
 }
 
 // handles the search form submission
@@ -124,15 +133,6 @@ function formSubmitHandler(event) {
 	}
 	console.log(event);
 };
-
-const options = ["restaurants", "gas", "parks", "movies", "groceries"];
-
-for (var i = 0; i < options.length; i++) {
-	input = document.getElementsByTagName("checkbox" + options[i]);
-	if (input.checked === true);
-	var checked = JSON.parse(localStorage.getItem(options)); 
-
-}
 
 
 searchFormEl.addEventListener('submit', formSubmitHandler);
