@@ -15,7 +15,7 @@
         <h1><a href="#">wandermapp</a></h1>
     </header>
 
-    <main id="container" class="flex-row justify-space-between">
+    <main id="container" class="flex-row justify-space-between container">
         <div id="sidebar" class="sidebar">
             <div class="card">
                 <form id="search-form" class="card-body">
@@ -25,37 +25,36 @@
                 </form>
             </div>
 
+
             <div class="Slidecontainer">
                 <input type="range" min="1" max="100"
                 class="slider" id="myRange">
             <div>
                 <form class="card-body">
+
+            <div class="card card-body">
+                <div class="filter-options">
+
                     <h4>Filter Options:</h4>
-                    <br>
-                    <br>    
                     <input type="checkbox" id="restaurants" class="restaurants" />
                     <label for="restaurants" class="restaurants">Restaurants</label>
-                    <br>
-                    <br>
                     <br>
                     <input type="checkbox" id="gas" class="gas" />
                     <label for="gas" class="gas">Gas Stations</label>
                     <br>
-                    <br>
-                    <br>
                     <input type="checkbox" id="parks" class="parks" />
                     <label for="parks" class="parks">Parks</label>
-                    <br>
-                    <br>
                     <br>
                     <input type="checkbox" id="movies" class="movies" />
                     <label for="movies" class="movies">Movies</label>
                     <br>
-                    <br>
-                    <br>
                     <input type="checkbox" id="groceries" class="groceries" />
                     <label for="groceries" class="groceries">Groceries</label>
+
                 </form>
+
+
+                </div>
 
             </div>
         </div>
@@ -68,7 +67,8 @@
         </div>
     </footer>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDEgZkkL71g2hYpAzc-sKf6Ivyt17LFFYY&callback=initMap&libraries=&v=weekly" async></script>
+
+    <script src="https://maps.googleapis.com/maps/api/js?callback=initMap&libraries=places&key=AIzaSyDEgZkkL71g2hYpAzc-sKf6Ivyt17LFFYY&v=weekly" async></script>
     <script src="./assets/js/script.js"></script>
 </body>
 
