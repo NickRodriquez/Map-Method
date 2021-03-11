@@ -13,31 +13,13 @@ for (var i = 0; i < options.length; i++) {
 
 }
 
-var slideContainer = function(){
-    var slider = $('.battery-slider'),
-    range = $('.slider-range'),
-    value = $('.slider-value');
-    miles = $('.miles');
 
-    slider.each(function(){
-      value.each(function(){
-          var value = $(this).prev().attr('value');
-          $(this).html(value);
-      });
-      range.on('input', function(){
-        if ( this.value == 100 ) {
-            $(miles).append( "<p>Pass</p>" );
-        }
-        else {
-            $(miles).append( "<p>Fail</p>" );
-        }
-
-        $(this).next(value).html(this.value);
-      });
-    });
-};
-
-slideContainer(appendChild.myRange);
+var slider = document.getElementById("myRange");
+var output = document.getElementById("miles");
+output.innerHTML = slider.value; 
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
 
 var map, infoWindow;
 
