@@ -125,4 +125,14 @@ function formSubmitHandler(event) {
 	console.log(event);
 };
 
+const options = ["restaurants", "gas", "parks", "movies", "groceries"];
+
+for (var i = 0; i < options.length; i++) {
+	input = document.getElementsByTagName("checkbox" + options[i]);
+	if (input.checked === true);
+	var checked = JSON.parse(localStorage.getItem(options)); 
+
+}
+
+
 searchFormEl.addEventListener('submit', formSubmitHandler);
