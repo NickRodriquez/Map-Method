@@ -11,7 +11,12 @@ var apiKey = "AIzaSyDEgZkkL71g2hYpAzc-sKf6Ivyt17LFFYY"
 // 	if (input.checked === true);
 // 	var checked = JSON.parse(localStorage.getItem(options));
 
-// }
+var slider = document.getElementById("myRange");
+var output = document.getElementById("miles");
+output.innerHTML = slider.value; 
+slider.oninput = function() {
+  output.innerHTML = this.value;
+}
 
 var map, infoWindow;
 
