@@ -102,7 +102,7 @@ function getSearch(search) {
 	console.log("apiURL", apiUrl)
 
 	// fetch API search data
-    fetch(apiUrl)
+    fetch("no-cors", apiUrl)
         .then(response => {
             if (response.ok) {
                 response.json()
@@ -110,11 +110,11 @@ function getSearch(search) {
                         displayDisplaySearch(data)
                     })
             } else {
-                console.log("error: " + response.statusText)
+                console.log("error1: " + response.statusText)
             }
         })
         .catch(err => {
-            console.log("error: " + err.statusText)
+            console.log("error2: " + err.statusText)
         })
 }
 
