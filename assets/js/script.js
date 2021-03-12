@@ -4,13 +4,6 @@ var mapContainerEl = document.getElementById('map-container');
 var slideContainer = document.getElementById('myRange');
 var apiKey = "AIzaSyDEgZkkL71g2hYpAzc-sKf6Ivyt17LFFYY"
 
-// const options = ["restaurants", "gas", "parks", "movies", "groceries"];
-
-// for (var i = 0; i < options.length; i++) {
-// 	var input = document.getElementsByTagName("checkbox" + options[i]);
-// 	if (input.checked === true);
-// 	var checked = JSON.parse(localStorage.getItem(options));
-
 var slider = document.getElementById("myRange");
 var output = document.getElementById("miles");
 output.innerHTML = slider.value; 
