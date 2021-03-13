@@ -13,6 +13,20 @@ slider.oninput = function() {
 
 var map, infoWindow;
 
+function setCircle(center){
+	
+	var circle = new google.maps.Circle({
+		center: center,
+		map: map,
+		radius: 10000,          // IN METERS.
+		fillColor: '#FF6600',
+		fillOpacity: 0.3,
+		strokeColor: "#FFF",
+		strokeWeight: 0         // DON'T SHOW CIRCLE BORDER.
+	});
+	circle.setMap(map);
+}
+
 function initMap() {
 	let options = {
 		center: { lat: 43.654, lng: -79.383 },
@@ -20,6 +34,9 @@ function initMap() {
 	};
 
 	map = new google.maps.Map(document.getElementById("map"), options);
+
+	setCircle({ lat: 43.654, lng: -79.383 });
+
 
 	var input = document.getElementById("search");
 	var searchBox = new google.maps.places.SearchBox(input);
@@ -71,6 +88,7 @@ function initMap() {
 			infoWindow.setPosition(position);
 			infoWindow.setContent("Your Location!");
 			infoWindow.open(map);
+			setCircle(position)
 		}, function () {
 			handleLocationError("Geolocation service faild", map.center());
 		})
