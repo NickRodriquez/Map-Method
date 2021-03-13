@@ -9,13 +9,14 @@ var output = document.getElementById("miles");
 output.innerHTML = slider.value; 
 slider.oninput = function() {
   output.innerHTML = this.value;
+  circle.setRadius(this.value * 1609.34);
 }
 
-var map, infoWindow;
+var map, infoWindow, circle;
 
 function setCircle(center){
 	
-	var circle = new google.maps.Circle({
+	 circle = new google.maps.Circle({
 		center: center,
 		map: map,
 		radius: 10000,          // IN METERS.
@@ -88,7 +89,7 @@ function initMap() {
 			infoWindow.setPosition(position);
 			infoWindow.setContent("Your Location!");
 			infoWindow.open(map);
-			setCircle(position)
+			circle.setCenter(position)
 		}, function () {
 			handleLocationError("Geolocation service faild", map.center());
 		})
