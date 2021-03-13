@@ -4,16 +4,6 @@ var mapContainerEl = document.getElementById('map-container');
 var slideContainer = document.getElementById('myRange');
 var apiKey = "AIzaSyDEgZkkL71g2hYpAzc-sKf6Ivyt17LFFYY"
 
-const options = ["restaurants", "gas", "parks", "movies", "groceries"];
-
-for (var i = 0; i < options.length; i++) {
-	var input = document.getElementsByTagName("checkbox" + options[i]);
-	if (input.checked === true);
-	var checked = JSON.parse(localStorage.getItem(options)); 
-
-}
-
-
 var slider = document.getElementById("myRange");
 var output = document.getElementById("miles");
 output.innerHTML = slider.value; 
@@ -34,31 +24,31 @@ function initMap() {
 	var input = document.getElementById("search");
 	var searchBox = new google.maps.places.SearchBox(input);
 
-	map.addListener("bounds_changed", function() {
+	map.addListener("bounds_changed", function () {
 		searchBox.setBounds(map.getBounds());
 	});
 
 	var markers = [];
 
-	searchBox.addListener("places_changed", function() {
+	searchBox.addListener("places_changed", function () {
 		var places = searchBox.getPlaces();
 
 		if (places.length === 0)
-		return;
+			return;
 
-		markers.forEach(function(m) {m.setMap(null); });
+		markers.forEach(function (m) { m.setMap(null); });
 		markers = [];
 
 		var bounds = new google.maps.LatLngBounds();
 
-		places.forEach(function(p) {
+		places.forEach(function (p) {
 			if (!p.geometry)
-			return;
+				return;
 
 			markers.push(new google.maps.Marker({
 				map: map,
 				title: p.name,
-				position:p.geometry.location
+				position: p.geometry.location
 			}));
 
 			if (p.geometry.viewport)
@@ -67,7 +57,7 @@ function initMap() {
 				bounds.extend(p.geometry.location);
 		});
 		map.fitBounds(bounds);
-		});
+	});
 
 	infoWindow = new google.maps.InfoWindow;
 
@@ -97,8 +87,32 @@ function handleLocationError(content, position) {
 
 
 // get search term from formSubmitHandler and return results
-function getSearch() {
-	apiUrl = ""
+function getSearch(search) {
+	console.log(search)
+
+    // format API urls
+	var apiUrl = "https://maps.googleapis.com/maps/api/place/findplacefromtext/json?input=" + search + "&inputtype=textquery&fields=photos,formatted_address,name,rating,opening_hours,geometry&key=" + apiKey;
+	console.log("apiURL", apiUrl)
+
+	// fetch API search data
+    fetch("no-cors", apiUrl)
+        .then(response => {
+            if (response.ok) {
+                response.json()
+                    .then(data => {
+                        displayDisplaySearch(data)
+                    })
+            } else {
+                console.log("error1: " + response.statusText)
+            }
+        })
+        .catch(err => {
+            console.log("error2: " + err.statusText)
+        })
+}
+
+function displayDisplaySearch(data) {
+	console.log(data)
 }
 
 // handles the search form submission
@@ -113,7 +127,6 @@ function formSubmitHandler(event) {
 	} else {
 		console.log("Please enter a search");
 	}
-	console.log(event);
 };
 
 
