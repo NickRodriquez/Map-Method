@@ -14,6 +14,10 @@
 - JavaScript
 - API
 
+**Website
+
+ https://nickrodriquez.github.io/Map-Method/
+
 
 **Authors:
 
