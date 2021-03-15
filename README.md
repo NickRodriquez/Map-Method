@@ -16,6 +16,8 @@
 
 ![wandermapp2](https://user-images.githubusercontent.com/77599683/111106865-77799500-851b-11eb-95e9-8dfce7f3bdc7.png)
 
+Deployed Url: https://nickrodriquez.github.io/Map-Method/
+
 GitHub Pages: https://github.com/NickRodriquez
 
 
